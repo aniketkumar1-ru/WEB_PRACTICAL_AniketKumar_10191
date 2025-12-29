@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse abd Keyboard</title>
+    <style>
+        body {
+            background-color: lightgrey;
+            text-align: center;
+        }
+        #myBox {
+            width: 250px;
+            height: 150px;
+            background-color: white;
+            border: 2px solid black;
+            margin: 50px auto;
+            line-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Mouse and Keyboard Events.</h2>
+    <p>Click the box or press a key.</p>
+
+    <div id="myBox">
+        Click Me!
+    </div>
+
+    <p id="msg">Key pressed will show here.</p>
+
+    <script>
+          var box = document.getElementById("myBox");
+          box.addEventListener("click", function() {
+            box.style.backgroundColor = "yellow";
+            box.innerHTML = "You Clicked!";
+           }
+         );
+          box.addEventListener("mouseover", function() {
+            box.style.border = "5px solid red";
+            }
+         );
+            box.addEventListener("mouseout", function() {
+              box.style.border = "2px solid black";
+           }
+         );
+           window.addEventListener("keydown", function(abc) {
+            document.getElementById("msg").innerHTML = "You pressed: " + abc.key;
+           }
+         );
+    </script>
+
+</body>
+</html>

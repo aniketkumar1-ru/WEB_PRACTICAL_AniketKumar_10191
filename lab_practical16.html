@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            padding: 40px;
+        }
+        .container {
+            background: #ffffff;
+            border: 1px solid #aaa;
+            padding: 20px;
+            width: 500px;
+            margin: auto;
+        }
+        .item {
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 5px solid gray;
+            background: #f9f9f9;
+        }
+        .active-status {
+            background-color: #d4edda;
+            border-left-color: #28a745;
+            color: #155724;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 id="mainHeading">Document Object Model Test</h2>
+        
+        <p class="desc">Item 1: Click buttons to modify these blocks.</p>
+        <p class="desc">Item 2: This demonstrates query Selector All.</p>
+        
+        <hr>
+        
+        <button onclick="changeHeading()">Change Header</button>
+        <button onclick="highlightAll()">Highlight All Items</button>
+        <button onclick="resetDOM()">Reset Page</button>
+    </div>
+
+    <script>
+        function changeHeading() {
+            var head = document.getElementById("mainHeading");
+            head.innerHTML = "DOM Content Updated!";
+            head.style.color = "navy";
+            head.style.textTransform = "uppercase";
+        }
+        function highlightAll() {
+            var items = document.querySelectorAll(".desc");
+            
+            for (var i = 0; i < items.length; i++) {
+                items[i].className = "item active-status";
+                items[i].innerHTML = "Updated Item No: " + (i + 1);
+            }
+        }
+        function resetDOM() {
+            var head = document.getElementById("mainHeading");
+            head.innerHTML = "Document Object Model Test";
+            head.style.color = "black";
+            head.style.textTransform = "none";
+
+            var items = document.querySelectorAll(".desc");
+            for (var j = 0; j < items.length; j++) {
+                items[j].className = "desc";
+                if(j == 0) items[j].innerHTML = "Item 1: Click buttons to modify these blocks.";
+                if(j == 1) items[j].innerHTML = "Item 2: This demonstrates querySelectorAll.";
+            }
+        }
+    </script>
+
+</body>
+</html>

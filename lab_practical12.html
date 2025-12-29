@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Calculator - Assignment 12</title>
+    <style>
+        /* Simple styling using basic colors */
+        body {
+            background-color: lightgrey;
+            font-family: Arial;
+            text-align: center;
+        }
+        .my-box {
+            background-color: white;
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid black;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+        .btn {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>CALCULATOR</h2>
+    <p>Arithmetic calculator using JavaScript.</p>
+
+    <div class="my-box">
+        <b>Enter Number 1:</b> <br>
+        <input type="text" id="n1"> <br>
+        
+        <b>Enter Number 2:</b> <br>
+        <input type="text" id="n2"> <br><br>
+
+        <button class="btn" onclick="add()">+</button>
+        <button class="btn" onclick="sub()">-</button>
+        <button class="btn" onclick="mul()">*</button>
+        <button class="btn" onclick="div()">/</button>
+
+        <br><br>
+        <div id="msg" style="color: rgb(17, 1, 1); font-weight: bold;">
+            Result will show here.
+        </div>
+    </div>
+
+    <script>
+        function add() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var sum = Number(a) + Number(b);
+            document.getElementById("msg").innerHTML = "Addition is: " + sum;
+        }
+
+        function sub() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var diff = a - b;
+            document.getElementById("msg").innerHTML = "Subtraction is: " + diff;
+        }
+
+        function mul() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var prod = a * b;
+            document.getElementById("msg").innerHTML = "Multiplication is: " + prod;
+        }
+
+        function div() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            if (b == 0) {
+                alert("Cannot divide by zero!");
+            } else {
+                var quot = a / b;
+                document.getElementById("msg").innerHTML = "Division is: " + quot;
+            }
+        }
+    </script>
+
+</body>
+</html>

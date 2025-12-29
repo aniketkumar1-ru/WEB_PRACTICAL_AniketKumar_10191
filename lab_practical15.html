@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        body {
+             font-family: Arial, sans-serif;
+             background-color: #f4f4f4;
+              padding: 50px;
+        }
+        .my-form-container {
+            background-color: white;
+             padding: 25px;
+             width: 350px;
+             margin: auto;
+             border: 1px solid #999;
+             border-radius: 5px;
+        }
+         input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+         .error {
+            color: red;
+            font-size: 13px;
+            font-weight: bold;
+        }
+         .submit-btn {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+         }
+    </style>
+</head>
+<body>
+
+<div class="my-form-container">
+    <h2 style="text-align:center;">Registration Form</h2>
+    
+    <form id="userForm" onsubmit="return finalCheck()">
+        <label>Username:</label>
+        <input type="text" id="uname" oninput="liveVerify()">
+         <span id="nameError" class="error"></span>
+
+           <br><br>
+
+          <label>Email ID:</label>
+         <input type="text" id="email">
+          <span id="emailError" class="error"></span>
+
+        <br><br>
+
+        <input type="submit" class="submit-btn" value="Submit Form">
+    </form>
+</div>
+
+<script>
+    function liveVerify() {
+        var nameInput = document.getElementById("uname").value;
+        if (nameInput.length < 5) {
+            document.getElementById("nameError").innerHTML = "Username must be 5+ chars";
+         } else {
+            document.getElementById("nameError").innerHTML = "";
+         }
+      }
+      function finalCheck() {
+         var name = document.getElementById("uname").value;
+         var email = document.getElementById("email").value;
+         var isValid = true;
+
+         if (name == "") {
+            alert("Name is required!");
+            isValid = false;
+         }
+         if (email == "") {
+            document.getElementById("emailError").innerHTML = "Email is empty!";
+             isValid = false;
+         } else if (email.indexOf("@") == -1) {
+            document.getElementById("emailError").innerHTML = "Invalid Email (missing @)";
+            isValid = false;
+         } else {
+            document.getElementById("emailError").innerHTML = "";
+         }
+         if (isValid == true) {
+            alert("Form is valid. Thank you!");
+            return true;
+         } else {
+            return false;
+         }
+     }
+</script>
+
+</body>
+</html>

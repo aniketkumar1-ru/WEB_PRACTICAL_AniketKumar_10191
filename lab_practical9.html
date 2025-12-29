@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design - Lab 9</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            /* Professional light-grey background */
+            background-color: #f0f2f5; 
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #1a2a3a;
+            color: #ffffff;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Container & Layout - MOBILE FIRST */
+        .container {
+            /* Flexible padding based on viewport width */
+            padding: 2rem 5%; 
+            display: flex;
+            flex-direction: column; /* Vertical stack for mobile */
+            gap: 1.5rem;
+        }
+
+        /* Card Styling */
+        .feature-card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-top: 4px solid #3498db; /* Subtle blue accent */
+            width: 100%; /* Full width on mobile */
+        }
+
+        .feature-card h2 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* MEDIA QUERY - DESKTOP LAYOUT (768px and up) */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Horizontal layout for desktop */
+                justify-content: space-between;
+                align-items: stretch;
+                /* Flexible height unit */
+                min-height: 40vh; 
+            }
+
+            .feature-card {
+                /* Flexible width: 3 cards with spacing */
+                width: 31%; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Responsive Design Lab</h1>
+        <p>A Mobile-First Approach with Flexible Units</p>
+    </header>
+
+    <main class="container">
+        <article class="feature-card">
+            <h2>Mobile First</h2>
+            <p>Styles are written for small screens first. This ensures the website is lightweight and functional on mobile devices before adding desktop complexity.</p>
+        </article>
+
+        <article class="feature-card">
+            <h2>Flexible Units</h2>
+            <p>Instead of fixed pixels, we use <strong>percentage (%)</strong> for widths and <strong>rem/vh</strong> for spacing. This allows the layout to fluidly adapt to any screen.</p>
+        </article>
+
+        <article class="feature-card">
+            <h2>Media Queries</h2>
+            <p>Using <code>@media</code> rules, the layout detects the screen size and automatically switches from a single column to a multi-column desktop view.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>Web Technology Laboratory &copy; 2025</p>
+    </footer>
+
+</body>
+</html>

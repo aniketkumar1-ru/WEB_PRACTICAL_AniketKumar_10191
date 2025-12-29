@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Functions and Scope</title>
+    <style>
+        body {
+            background-color: #cccccc;
+            font-family: Arial;
+        }
+        .main-div {
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+            width: 400px;
+            margin: 30px auto;
+        }
+        button {
+            padding: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-div">
+        <h2>Functions and Scope</h2>
+        
+           <p>1. User Defined Function</p>
+            Enter Name: <input type="text" id="userName">
+        <button onclick="sayHello()">Click Me</button>
+
+        <hr>
+
+        <p>2. Scope Test (Check Alert)</p>
+           <button onclick="testVar()">Check Var</button>
+          <button onclick="testLetConst()">Check Let/Const</button>
+    </div>
+
+    <script>
+        function sayHello() {
+             var name = document.getElementById("userName").value;
+            if (name == "") {
+                alert("Enter name!");
+            } else {
+                alert("Hello " + name);
+            }
+        }
+        function testVar() {
+             var x = "outside";
+            if (true) {
+                 var x = "inside"; 
+            }
+            alert("Var value is: " + x); 
+        }
+        function testLetConst() {
+            let y = "outside";
+             const z = "fixed";
+
+            if (true) {
+                  let y = "inside";
+            }
+            
+               alert("Let is: " + y + " and Const is: " + z);
+        }
+    </script>
+
+</body>
+</html>

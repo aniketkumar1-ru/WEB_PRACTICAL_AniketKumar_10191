@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loops and If Condition</title>
+    <style>
+        body {
+            font-family: "Times New Roman";
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            border: 2px solid blue;
+            background-color: white;
+            padding: 15px;
+            width: 500px;
+        }
+        h2 {
+            text-decoration: underline;
+            color: darkblue;
+        }
+        .output-box {
+            border: 1px solid grey;
+            padding: 10px;
+            margin-top: 10px;
+            min-height: 50px;
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>
+        <p>Conditional statements and Looping.</p></h2>
+
+        <div>
+            <h3>1. Check Even or Odd (If-Else)</h3>
+            Enter a number: <input type="text" id="numInput">
+            <button onclick="checkEvenOdd()">Check</button>
+            <p id="res1"></p>
+        </div>
+
+        <hr>
+
+        <div>
+            <h3>2. Looping (For, While, Do-While)</h3>
+            <button onclick="runForLoop()">Show For Loop (1-5)</button>
+            <button onclick="runWhileLoop()">Show While Loop (5-1)</button>
+            <button onclick="runDoWhileLoop()">Show Do-While</button>
+            
+            <div class="output-box" id="loopOutput">
+                Loop output will appear here...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkEvenOdd() {
+            var n = document.getElementById("numInput").value;
+            if (n % 2 == 0) {
+                document.getElementById("res1").innerHTML = n + " is an Even Number";
+            } else {
+                document.getElementById("res1").innerHTML = n + " is an Odd Number";
+            }
+        }
+        function runForLoop() {
+            var msg = "For Loop: ";
+            for (var i = 1; i <= 5; i++) {
+                msg = msg + i + " ";
+            }
+            document.getElementById("loopOutput").innerHTML = msg;
+        }
+        function runWhileLoop() {
+            var msg = "While Loop: ";
+            var count = 5;
+            while (count >= 1) {
+                msg = msg + count + " ";
+                count--;
+            }
+            document.getElementById("loopOutput").innerHTML = msg;
+        }
+        function runDoWhileLoop() {
+            var msg = "Do-While Loop: ";
+            var x = 10;
+            do {
+                msg = msg + "Value is " + x;
+                x++;
+            } while (x < 10);
+            document.getElementById("loopOutput").innerHTML = msg;
+        }
+    </script>
+
+</body>
+</html>
