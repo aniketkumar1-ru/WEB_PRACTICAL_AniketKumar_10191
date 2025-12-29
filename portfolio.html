@@ -1,0 +1,316 @@
+
+<html>
+<head>
+
+  <title>Aniket Kumar | Academic Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    :root {
+      --bg-dark: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      --bg-light: linear-gradient(135deg, #fdfbfb, #ebedee);
+      --text-dark: #ffffff;
+      --text-light: #000000;
+      --accent: #00ffd5;
+      --secondary: #7000ff;
+      --card-dark: rgba(255,255,255,0.1);
+      --card-light: rgba(0,0,0,0.08);
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body.light {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+    }
+
+    /* THEME TOGGLE */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      z-index: 999;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-text span {
+      color: var(--accent);
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background: var(--accent);
+      color: #000;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-right: 10px;
+      display: inline-block;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* PHOTO POSITIONED UPPER RIGHT */
+    .hero-img {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end; /* Keeps it to the right */
+      min-width: 300px;
+    }
+
+    .hero-img img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid var(--accent);
+      box-shadow: 0 0 40px rgba(0,255,213,0.4);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* GLASS CARD */
+    .glass {
+      background: var(--card-dark);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      line-height: 1.6;
+    }
+
+    body.light .glass {
+      background: var(--card-light);
+    }
+
+    /* SKILLS */
+    .skill { margin-bottom: 20px; }
+    .progress {
+      width: 100%;
+      height: 12px;
+      background: #444;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+    .progress div {
+      height: 100%;
+      width: 0;
+      background: var(--accent);
+      transition: 1.5s ease-in-out;
+    }
+
+    /* GET IN TOUCH SECTION (Professional Style) */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .contact-info a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .contact-info a i {
+      color: var(--accent);
+      margin-right: 15px;
+      font-size: 1.4rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.05);
+      color: inherit;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0,0,0,0.2);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { text-align: center; justify-content: center; padding-top: 100px; }
+      .hero-img { justify-content: center; margin-top: 40px; }
+      .hero-text h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="theme-toggle" id="toggleTheme">🌙 Dark</div>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h3>End Semester Project</h3>
+      <h1>Aniket <span>Kumar</span></h1>
+      <p style="font-size: 1.2rem; margin-top: 10px; opacity: 0.9;">
+        B.Tech CSE (Core) Student • RU-25-10191
+      </p>
+      <div style="margin-top: 25px;">
+        <a href="#academic" class="btn">Academic Profile</a>
+        <a href="#contact" class="btn" style="background: transparent; color: var(--accent); border: 1px solid var(--accent);">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="aniket_profile_pic.jpg" alt="Aniket Kumar">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="glass">
+      I am <strong>Aniket Kumar</strong>, a first-year Bachelor of Technology student specializing in
+      Computer Science & Engineering (Core) at Rungta International Skills University. 
+      This portfolio serves as my final submission for the end-semester project, showcasing my 
+      foundational skills in Web Development and my academic journey thus far.
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skill"><span>HTML/CSS</span><div class="progress"><div data-width="90%"></div></div></div>
+    <div class="skill"><span>JavaScript</span><div class="progress"><div data-width="80%"></div></div></div>
+    <div class="skill"><span>Programming (C/Python)</span><div class="progress"><div data-width="75%"></div></div></div>
+    <div class="skill"><span>Problem Solving</span><div class="progress"><div data-width="70%"></div></div></div>
+    <div class="skill"><span>Web Design</span><div class="progress"><div data-width="85%"></div></div></div>
+  </section>
+
+  <section id="academic">
+    <h2>Academic Details</h2>
+    <div class="glass">
+      <ul style="list-style: none;">
+          <li style="margin-bottom: 15px;"><strong>ERP ID:</strong> RU-25-10191</li>
+          <li style="margin-bottom: 15px;"><strong>Course:</strong> Bachelor of Technology (B.Tech)</li>
+          <li style="margin-bottom: 15px;"><strong>Branch:</strong> Computer Science & Engineering (Core)</li>
+          <li style="margin-bottom: 15px;"><strong>Year/Semester:</strong> 1st Year / 1st Semester</li>
+          <li style="margin-bottom: 15px;"><strong>University:</strong> Rungta International Skills University</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3 style="margin-bottom: 20px;">Contact Information</h3>
+        <p style="margin-bottom: 25px; opacity: 0.8;">If you have any questions regarding this project or my academic work, feel free to reach out through any platform below.</p>
+        
+        <a href="mailto:aniket.kumar1@rungta.org"><i class="fas fa-envelope"></i> aniket.kumar1@rungta.org</a>
+        <a href="https://www.linkedin.com/in/añïkèt-kúmár-677179383" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+        <a href="https://www.instagram.com/aniket.in__" target="_blank"><i class="fab fa-instagram"></i> @aniket.in__</a>
+      </div>
+
+      <div class="contact-form">
+        <form action="mailto:aniket.kumar1@rungta.org" method="post" enctype="text/plain">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea rows="4" placeholder="Your Message for the Semester Project" required></textarea>
+          <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Aniket Kumar | End Semester Project | Built with ❤️
+  </footer>
+
+  <script>
+    // Skill bar animation
+    const skillBars = document.querySelectorAll('.progress div');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.width;
+        }
+      });
+    }, { threshold: 0.5 });
+
+    skillBars.forEach(bar => observer.observe(bar));
+
+    // Theme Toggle Logic
+    const toggleBtn = document.getElementById('toggleTheme');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      toggleBtn.textContent = '🌞 Light';
+    }
+
+    toggleBtn.onclick = () => {
+      body.classList.toggle('light');
+      if (body.classList.contains('light')) {
+        toggleBtn.textContent = '🌞 Light';
+        localStorage.setItem('theme', 'light');
+      } else {
+        toggleBtn.textContent = '🌙 Dark';
+        localStorage.setItem('theme', 'dark');
+      }
+    };
+  </script>
+</body>
+</html>
